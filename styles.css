@@ -1,0 +1,54 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+    font-family: "roboto", "sans-serif";
+}
+
+.header {
+    position: relative;
+}
+
+.header h1 {
+
+    font-family: "shrikhand";
+    text-align: center;
+    box-shadow: 0px 3px 3px 1px grey;
+    padding: 50px;
+    margin: 0;
+}
+
+.city {
+    display: flex;
+
+    background-color: lightgray;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.city h2 {
+    padding: 20px;
+}
+
+.city i {
+    display: inline-flex;
+    align-items: center;
+    font-size: 22px;
+}
+
+/*
+.search-bar {
+    border: 1px solid red;
+    text-align: center;
+}
+
+.search-bar>h2 {
+    margin-top: 22px;
+}
+*/
