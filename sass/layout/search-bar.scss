@@ -1,0 +1,29 @@
+@use "../utils/box-shadow.scss";
+@use "../utils/hover.scss";
+@use "../utils/colors.scss";
+
+.search-bar {
+
+    text-align: center;
+
+
+    & h2 {
+        margin-top: 22px;
+    }
+
+    & button {
+        border-radius: 25px;
+        color: white;
+        padding: 16px 25px;
+        border: none;
+        font-weight: bold;
+        font-size: 16px;
+        background-image: linear-gradient(0deg, colors.$purple, colors.$pink);
+        cursor: pointer;
+        box-shadow: 2px 1px 16px -3px grey;
+        @include hover.hover;
+
+    }
+
+
+}

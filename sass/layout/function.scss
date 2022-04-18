@@ -1,0 +1,48 @@
+@use "../utils/box-shadow.scss";
+@use "../utils/hover.scss";
+@use "../utils/colors.scss";
+
+.function-list {
+    padding: 0 20px;
+
+    & h2 {
+        width: auto;
+    }
+
+    & ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-inline-start: 0;
+
+
+    }
+
+    & li {
+        background-color: colors.$grey;
+        padding: 20px 10px;
+        border-radius: 25px;
+        position: relative;
+        margin-left: 15px;
+        @include hover.hover;
+    }
+
+    & span {
+        background-color: colors.$purple;
+        font-size: 16px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        color: white;
+        position: absolute;
+        left: -11px;
+        bottom: 19px;
+        display: grid;
+        place-items: center;
+    }
+
+    & i {
+        margin: 0 15px;
+    }
+}
