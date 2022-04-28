@@ -69,3 +69,13 @@
 .function-list li:hover {
     color: colors.$purple;
 }
+
+@media (min-width: 768px) {
+    .function-list ul {
+        flex-direction: row;
+    }
+
+    .function-list li {
+        width: 100%;
+    }
+}

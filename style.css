@@ -113,6 +113,15 @@ body {
   color: #9356DC;
 }
 
+@media (min-width: 768px) {
+  .function-list ul {
+    flex-direction: row;
+  }
+
+  .function-list li {
+    width: 100%;
+  }
+}
 .menus {
   background-color: #f6f6f6;
   padding: 20px;
@@ -227,6 +236,46 @@ footer h2 {
 .footer-link i {
   width: 15px;
   margin-right: 5px;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.restau-title {
+  font-family: "shrikhand", "sans-serif";
+  position: relative;
+  background-color: #f6f6f6;
+  margin-top: -100px;
+  border-radius: 25px 25px 0 0;
+  padding: 15px;
+}
+.restau-title h2 {
+  font-size: x-large;
+  font-weight: 400;
+}
+.restau-title i {
+  color: black;
+  position: absolute;
+  font-size: 30px;
+  right: 25px;
+  top: 38px;
+}
+.restau-title .fas {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  background-image: linear-gradient(353deg, #9356DC, #FF79DA);
+}
+.restau-title:hover .fas {
+  transition: 0.03s;
+  opacity: 1;
+}
+
+footer {
+  padding: 11px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,54 @@
+@use "../utils/mixins.scss";
+@use "../utils/colors.scss";
+
+img {
+    width: 100%;
+
+    object-fit: cover;
+
+}
+
+
+
+
+.restau-title {
+
+    font-family: "shrikhand", "sans-serif";
+    position: relative;
+    background-color: colors.$grey;
+    margin-top: -100px;
+    border-radius: 25px 25px 0 0;
+    padding: 15px;
+
+    & h2 {
+        font-size: x-large;
+        font-weight: 400;
+    }
+
+    & i {
+        color: black;
+        position: absolute;
+        font-size: 30px;
+        right: 25px;
+        top: 38px;
+    }
+
+    .fas {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        opacity: 0;
+        @include mixins.gradient;
+    }
+
+    &:hover .fas {
+        transition: 0.03s;
+        opacity: 1;
+    }
+
+
+}
+
+footer {
+    padding: 11px;
+}
