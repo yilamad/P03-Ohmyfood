@@ -1,9 +1,9 @@
-@use "../utils/box-shadow.scss";
-@use "../utils/hover.scss";
+@use "../utils/mixins.scss";
 @use "../utils/colors.scss";
 
 .function-list {
     padding: 0 20px;
+    margin-bottom: 64px;
 
     & h2 {
         width: auto;
@@ -20,13 +20,25 @@
     }
 
     & li {
+        display: flex;
         background-color: colors.$grey;
         padding: 20px 10px;
         border-radius: 25px;
         position: relative;
         margin-left: 15px;
-        @include hover.hover;
+        @include mixins.button-shadow;
     }
+
+    & li:hover {
+        color: black;
+        background-color: colors.$purple-lighter;
+
+    }
+
+    & .function-text:hover {
+        color: black;
+    }
+
 
     & span {
         background-color: colors.$purple;
@@ -37,12 +49,23 @@
         color: white;
         position: absolute;
         left: -11px;
-        bottom: 19px;
+        bottom: 35px;
         display: grid;
         place-items: center;
     }
 
+
+
     & i {
+        display: flex;
+        align-items: center;
         margin: 0 15px;
     }
+
+
+
+}
+
+.function-list li:hover {
+    color: colors.$purple;
 }

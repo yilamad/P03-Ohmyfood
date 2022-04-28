@@ -1,4 +1,4 @@
-@use "../utils/box-shadow.scss";
+@use "../utils/mixins.scss";
 
 
 .header {
@@ -10,7 +10,7 @@
         text-align: center;
         padding: 50px;
         margin: 0;
-        @include box-shadow.button-shadow;
+        @include mixins.button-shadow;
 
     }
 }

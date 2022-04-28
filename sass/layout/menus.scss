@@ -1,14 +1,21 @@
 @use "../utils/colors.scss";
-@use "../utils/hover.scss";
-@use "../utils/box-shadow.scss";
+@use "../utils/mixins.scss";
+
 
 .menus {
+
     background-color: colors.$grey;
-    padding: 0 20px;
+    padding: 20px;
+
+
 
     & a {
         text-decoration: none;
         margin-bottom: 0px;
+        background-color: white;
+        border-radius: 25px;
+        position: relative;
+        @include mixins.button-shadow;
     }
 }
 
@@ -18,14 +25,13 @@
     gap: 20px;
 
     & card {
-        background-color: white;
-        border-radius: 25px;
+
         display: flex;
         flex-direction: column;
-        /*@include box-shadow.card-shadow;*/
-        box-shadow: 0px 8px 5px 0px grey;
+
+
         height: 230px;
-        position: relative;
+
     }
 
 
@@ -38,8 +44,9 @@
     position: absolute;
     background-color: #99e2d0;
     padding: 5px;
-    margin-top: 10px;
-    right: 35px;
+    top: 16px;
+    right: 20px;
+    border-radius: 5px;
 }
 
 
@@ -56,6 +63,8 @@
 
 .card-text {
     margin-top: 0px;
+    position: relative;
+    margin-left: 10px;
 
     & h2,
     p {
@@ -68,5 +77,41 @@
         font-size: 20px;
         margin-top: -10px;
         font-weight: 200;
+    }
+
+    & i {
+        color: black;
+        position: absolute;
+        font-size: 30px;
+        right: 25px;
+        top: 10px;
+    }
+
+    .fas {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        opacity: 0;
+        @include mixins.gradient;
+
+    }
+
+    &:hover .fas {
+        transition: 0.03s;
+        opacity: 1;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .menus-card {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+
+    .card {
+
+        width: 48%;
     }
 }
