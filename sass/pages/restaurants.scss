@@ -1,5 +1,22 @@
 @use "../utils/mixins.scss";
 @use "../utils/colors.scss";
+@use "../utils/animations.scss";
+
+.restaurant-header {
+    position: relative;
+
+    & h1 {
+        padding: 10px;
+    }
+
+    & i {
+        color: black;
+        font-size: larger;
+        position: absolute;
+        top: 25px;
+        left: 35px;
+    }
+}
 
 img {
     width: 100%;
@@ -7,8 +24,6 @@ img {
     object-fit: cover;
 
 }
-
-
 
 
 .restau-title {
@@ -20,34 +35,157 @@ img {
     border-radius: 25px 25px 0 0;
     padding: 15px;
 
+    h3,
+    p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+
     & h2 {
-        font-size: x-large;
+        font-size: xx-large;
         font-weight: 400;
     }
 
-    & i {
-        color: black;
-        position: absolute;
-        font-size: 30px;
+    &::before {
+        @include mixins.heart;
         right: 25px;
-        top: 38px;
+        top: 49px;
     }
 
-    .fas {
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        opacity: 0;
+    &::after {
+        @include mixins.heart;
         @include mixins.gradient;
+        color: transparent;
+        font-weight: 900;
+        opacity: 0;
+        right: 25px;
+        top: 49px;
     }
 
-    &:hover .fas {
-        transition: 0.03s;
+    &:hover::after {
+        transition: 250ms;
         opacity: 1;
     }
 
 
+
 }
+
+/*MENU-LIST*/
+
+
+.menu-list {
+
+
+    @for $i from 1 through 3 {
+        div:nth-of-type(#{$i}) {
+            animation-delay: 100ms * $i;
+
+        }
+    }
+
+    padding: 6px;
+    background-color: colors.$grey;
+
+
+    & h2 {
+        text-transform: uppercase;
+        font-weight: 300;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: colors.$blue;
+            width: 60px;
+            height: 5px;
+            top: 35px;
+            left: 2px;
+        }
+    }
+}
+
+.menu-item {
+
+
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    border-radius: 25px;
+    background-color: white;
+    overflow: hidden;
+    width: 100%;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+    animation: blur 1s;
+    overflow: hidden;
+    @include mixins.button-shadow;
+    animation: blur 2s;
+
+    & h3,
+    p {
+        margin: 10px 5px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+.price {
+    display: flex;
+    align-items: end;
+    font-weight: 900;
+    margin-left: auto;
+    margin-bottom: 10px;
+    width: 50px;
+
+}
+
+.menu-text {
+    margin: 10px;
+    overflow: hidden;
+
+}
+
+.checkmark {
+    display: flex;
+    justify-content: center;
+    background-color: colors.$blue;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    border-radius: 0 25px 25px 0;
+    margin-right: -51px;
+    transition: all 250ms ease-in-out;
+
+    & i {
+        border-radius: 50%;
+        background-color: white;
+        padding: 5px;
+        font-weight: 900;
+        color: colors.$blue;
+    }
+
+
+}
+
+.menu-item:hover .checkmark {
+    margin-right: 0;
+    transition: 250ms;
+
+    & i {
+        @include animations.spin;
+        animation: spin 1s ease;
+    }
+
+}
+
+
+
+
 
 footer {
     padding: 11px;

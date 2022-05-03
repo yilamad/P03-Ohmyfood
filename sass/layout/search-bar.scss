@@ -22,6 +22,7 @@
         cursor: pointer;
         @include mixins.button-shadow;
         @include mixins.gradient;
+        transition: all 250ms ease-in-out;
 
     }
 

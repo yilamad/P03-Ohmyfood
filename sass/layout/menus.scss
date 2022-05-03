@@ -66,6 +66,26 @@
     position: relative;
     margin-left: 10px;
 
+
+
+    &::before {
+        @include mixins.heart;
+
+    }
+
+    &::after {
+        @include mixins.heart;
+        @include mixins.gradient;
+        color: transparent;
+        font-weight: 900;
+        opacity: 0;
+    }
+
+    &:hover::after {
+        transition: 250ms;
+        opacity: 1;
+    }
+
     & h2,
     p {
         color: black;
@@ -79,27 +99,8 @@
         font-weight: 200;
     }
 
-    & i {
-        color: black;
-        position: absolute;
-        font-size: 30px;
-        right: 25px;
-        top: 10px;
-    }
 
-    .fas {
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        opacity: 0;
-        @include mixins.gradient;
 
-    }
-
-    &:hover .fas {
-        transition: 0.03s;
-        opacity: 1;
-    }
 
 }
 

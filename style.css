@@ -20,6 +20,38 @@ body {
   box-shadow: 4px 4px 10px grey;
 }
 
+.loader {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  z-index: 1;
+  background-color: whitesmoke;
+  animation: loading 200ms;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+.loader i {
+  font-size: xxx-large;
+  color: #9356DC;
+  animation: spin 3s ease-in-out;
+  animation-iteration-count: 2;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes spinning {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .city {
   display: flex;
   background-color: #f6f6f6;
@@ -52,6 +84,7 @@ body {
   cursor: pointer;
   box-shadow: 4px 4px 10px grey;
   background-image: linear-gradient(353deg, #9356DC, #FF79DA);
+  transition: all 250ms ease-in-out;
 }
 .search-bar button:hover {
   background: linear-gradient linear-gradient(353deg, #9356DC, #FF79DA);
@@ -82,12 +115,12 @@ body {
   position: relative;
   margin-left: 15px;
   box-shadow: 4px 4px 10px grey;
+  transition: all 250ms ease-in-out;
 }
 .function-list li:hover {
-  color: black;
   background-color: #f5edff;
 }
-.function-list .function-text:hover {
+.function-list p {
   color: black;
 }
 .function-list span {
@@ -120,6 +153,7 @@ body {
 
   .function-list li {
     width: 100%;
+    transition: all 250ms ease-in-out;
   }
 }
 .menus {
@@ -169,6 +203,56 @@ body {
   position: relative;
   margin-left: 10px;
 }
+.card-text::before {
+  content: "";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  color: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 250ms ease-in-out;
+  color: black;
+  position: absolute;
+  font-size: 30px;
+  right: 25px;
+  top: 10px;
+}
+.card-text::after {
+  content: "";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  color: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 250ms ease-in-out;
+  color: black;
+  position: absolute;
+  font-size: 30px;
+  right: 25px;
+  top: 10px;
+  background-image: linear-gradient(353deg, #9356DC, #FF79DA);
+  color: transparent;
+  font-weight: 900;
+  opacity: 0;
+}
+.card-text:hover::after {
+  transition: 250ms;
+  opacity: 1;
+}
 .card-text h2,
 .card-text p {
   color: black;
@@ -179,24 +263,6 @@ body {
   font-size: 20px;
   margin-top: -10px;
   font-weight: 200;
-}
-.card-text i {
-  color: black;
-  position: absolute;
-  font-size: 30px;
-  right: 25px;
-  top: 10px;
-}
-.card-text .fas {
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 0;
-  background-image: linear-gradient(353deg, #9356DC, #FF79DA);
-}
-.card-text:hover .fas {
-  transition: 0.03s;
-  opacity: 1;
 }
 
 @media (min-width: 768px) {
@@ -238,6 +304,30 @@ footer h2 {
   margin-right: 5px;
 }
 
+@keyframes blur {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.restaurant-header {
+  position: relative;
+}
+.restaurant-header h1 {
+  padding: 10px;
+}
+.restaurant-header i {
+  color: black;
+  font-size: larger;
+  position: absolute;
+  top: 25px;
+  left: 35px;
+}
+
 img {
   width: 100%;
   object-fit: cover;
@@ -251,27 +341,170 @@ img {
   border-radius: 25px 25px 0 0;
   padding: 15px;
 }
+.restau-title h3,
+.restau-title p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .restau-title h2 {
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: 400;
 }
-.restau-title i {
+.restau-title::before {
+  content: "";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  color: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 250ms ease-in-out;
   color: black;
   position: absolute;
   font-size: 30px;
   right: 25px;
-  top: 38px;
+  top: 10px;
+  right: 25px;
+  top: 49px;
 }
-.restau-title .fas {
-  color: transparent;
+.restau-title::after {
+  content: "";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  color: black;
   background-clip: text;
   -webkit-background-clip: text;
-  opacity: 0;
-  background-image: linear-gradient(353deg, #9356DC, #FF79DA);
-}
-.restau-title:hover .fas {
-  transition: 0.03s;
   opacity: 1;
+  transition: all 250ms ease-in-out;
+  color: black;
+  position: absolute;
+  font-size: 30px;
+  right: 25px;
+  top: 10px;
+  background-image: linear-gradient(353deg, #9356DC, #FF79DA);
+  color: transparent;
+  font-weight: 900;
+  opacity: 0;
+  right: 25px;
+  top: 49px;
+}
+.restau-title:hover::after {
+  transition: 250ms;
+  opacity: 1;
+}
+
+/*MENU-LIST*/
+.menu-list {
+  padding: 6px;
+  background-color: #f6f6f6;
+}
+.menu-list div:nth-of-type(1) {
+  animation-delay: 100ms;
+}
+.menu-list div:nth-of-type(2) {
+  animation-delay: 200ms;
+}
+.menu-list div:nth-of-type(3) {
+  animation-delay: 300ms;
+}
+.menu-list h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  position: relative;
+}
+.menu-list h2::after {
+  content: "";
+  position: absolute;
+  background-color: #99E2D0;
+  width: 60px;
+  height: 5px;
+  top: 35px;
+  left: 2px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  border-radius: 25px;
+  background-color: white;
+  overflow: hidden;
+  width: 100%;
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+  animation: blur 1s;
+  overflow: hidden;
+  box-shadow: 4px 4px 10px grey;
+  animation: blur 2s;
+}
+.menu-item h3,
+.menu-item p {
+  margin: 10px 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.price {
+  display: flex;
+  align-items: end;
+  font-weight: 900;
+  margin-left: auto;
+  margin-bottom: 10px;
+  width: 50px;
+}
+
+.menu-text {
+  margin: 10px;
+  overflow: hidden;
+}
+
+.checkmark {
+  display: flex;
+  justify-content: center;
+  background-color: #99E2D0;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  border-radius: 0 25px 25px 0;
+  margin-right: -51px;
+  transition: all 250ms ease-in-out;
+}
+.checkmark i {
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+  font-weight: 900;
+  color: #99E2D0;
+}
+
+.menu-item:hover .checkmark {
+  margin-right: 0;
+  transition: 250ms;
+}
+.menu-item:hover .checkmark i {
+  animation: spin 1s ease;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 
 footer {

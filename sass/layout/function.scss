@@ -27,15 +27,16 @@
         position: relative;
         margin-left: 15px;
         @include mixins.button-shadow;
+        transition: all 250ms ease-in-out;
     }
 
     & li:hover {
-        color: black;
+
         background-color: colors.$purple-lighter;
 
     }
 
-    & .function-text:hover {
+    & p {
         color: black;
     }
 
@@ -77,5 +78,6 @@
 
     .function-list li {
         width: 100%;
+        transition: all 250ms ease-in-out;
     }
 }
