@@ -3,7 +3,7 @@
 }
 
 @mixin card-shadow {
-    box-shadow: 0px 8px 5px 0px grey;
+    box-shadow: 0px 8px 5px 0px #e6e6e6;
 }
 
 @mixin gradient {
@@ -37,4 +37,14 @@
     right: 25px;
     top: 10px;
 
+}
+
+@mixin button {
+    border-radius: 25px;
+    color: white;
+    padding: 16px 25px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
 }

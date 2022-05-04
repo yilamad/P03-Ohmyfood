@@ -26,7 +26,7 @@
         border-radius: 25px;
         position: relative;
         margin-left: 15px;
-        @include mixins.button-shadow;
+        @include mixins.card-shadow;
         transition: all 250ms ease-in-out;
     }
 

@@ -13,13 +13,7 @@
     }
 
     & button {
-        border-radius: 25px;
-        color: white;
-        padding: 16px 25px;
-        border: none;
-        font-weight: bold;
-        font-size: 16px;
-        cursor: pointer;
+        @include mixins.button;
         @include mixins.button-shadow;
         @include mixins.gradient;
         transition: all 250ms ease-in-out;
