@@ -6,6 +6,7 @@
 
     background-color: colors.$grey;
     padding: 20px;
+    padding-bottom: 90px;
 
 
 
@@ -91,7 +92,7 @@
     &::before {
         @include mixins.heart;
         right: 25px;
-        top: 49px;
+        top: 10px;
     }
 
     &::after {
@@ -100,6 +101,8 @@
         color: transparent;
         font-weight: 900;
         opacity: 0;
+        right: 25px;
+        top: 10px;
     }
 
     &:hover::after {

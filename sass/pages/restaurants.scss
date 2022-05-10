@@ -54,10 +54,11 @@ img {
 
 }
 
-.heart {
+.heart-restaurant {
     &::before {
         @include mixins.heart;
-
+        top: 50px;
+        right: 50px;
     }
 
     &::after {
@@ -66,6 +67,9 @@ img {
         color: transparent;
         font-weight: 900;
         opacity: 0;
+        top: 50px;
+        right: 50px;
+
 
     }
 
@@ -201,7 +205,7 @@ img {
     }
 
     & button:hover {
-        background: linear-gradient linear-gradient(353deg, #9356DC, #FF79DA);
+        @include mixins.gradient;
         @include mixins.button-fx;
     }
 }

@@ -21,7 +21,7 @@
     }
 
     & button:hover {
-        background: linear-gradient linear-gradient(353deg, #9356DC, #FF79DA);
+        @include mixins.gradient;
         @include mixins.button-fx;
     }
 }
