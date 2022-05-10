@@ -7,6 +7,7 @@
 body {
   margin: 0;
   font-family: "roboto", "sans-serif";
+  width: auto;
 }
 
 .header {
@@ -203,8 +204,20 @@ body {
   position: relative;
   margin-left: 10px;
 }
-.card-text::before {
-  content: "";
+.card-text h2,
+.card-text p {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+.card-text p {
+  font-size: 20px;
+  margin-top: -10px;
+  font-weight: 200;
+}
+
+.heart::before {
+  content: "\f004";
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -212,7 +225,6 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
-  content: "\f004";
   color: black;
   background-clip: text;
   -webkit-background-clip: text;
@@ -223,9 +235,11 @@ body {
   font-size: 30px;
   right: 25px;
   top: 10px;
+  right: 25px;
+  top: 49px;
 }
-.card-text::after {
-  content: "";
+.heart::after {
+  content: "\f004";
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -233,7 +247,6 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
-  content: "\f004";
   color: black;
   background-clip: text;
   -webkit-background-clip: text;
@@ -249,20 +262,9 @@ body {
   font-weight: 900;
   opacity: 0;
 }
-.card-text:hover::after {
+.heart:hover::after {
   transition: 250ms;
   opacity: 1;
-}
-.card-text h2,
-.card-text p {
-  color: black;
-  text-decoration: none;
-  font-size: 20px;
-}
-.card-text p {
-  font-size: 20px;
-  margin-top: -10px;
-  font-weight: 200;
 }
 
 @media (min-width: 768px) {
@@ -352,8 +354,9 @@ img {
   font-size: xx-large;
   font-weight: 400;
 }
-.restau-title::before {
-  content: "";
+
+.heart::before {
+  content: "\f004";
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -361,7 +364,6 @@ img {
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
-  content: "\f004";
   color: black;
   background-clip: text;
   -webkit-background-clip: text;
@@ -372,11 +374,9 @@ img {
   font-size: 30px;
   right: 25px;
   top: 10px;
-  right: 25px;
-  top: 49px;
 }
-.restau-title::after {
-  content: "";
+.heart::after {
+  content: "\f004";
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -384,7 +384,6 @@ img {
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
-  content: "\f004";
   color: black;
   background-clip: text;
   -webkit-background-clip: text;
@@ -399,10 +398,8 @@ img {
   color: transparent;
   font-weight: 900;
   opacity: 0;
-  right: 25px;
-  top: 49px;
 }
-.restau-title:hover::after {
+.heart:hover::after {
   transition: 250ms;
   opacity: 1;
 }
@@ -465,7 +462,7 @@ img {
   align-items: end;
   font-weight: 900;
   margin-left: auto;
-  margin-bottom: 10px;
+  margin-bottom: 19px;
   width: 50px;
 }
 
@@ -480,9 +477,9 @@ img {
   background-color: #99E2D0;
   display: flex;
   align-items: center;
-  width: 50px;
+  width: 80px;
   border-radius: 0 25px 25px 0;
-  margin-right: -51px;
+  margin-right: -80px;
   transition: all 250ms ease-in-out;
 }
 .checkmark i {
@@ -537,6 +534,28 @@ img {
 
 footer {
   padding: 11px;
+}
+
+@media (min-width: 768px) {
+  .menu-responsive {
+    display: flex;
+  }
+
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .menu-text {
+    max-width: 50%;
+  }
+}
+@media (min-width: 994px) {
+  .menu-text {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

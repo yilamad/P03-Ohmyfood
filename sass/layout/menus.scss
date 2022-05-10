@@ -68,23 +68,6 @@
 
 
 
-    &::before {
-        @include mixins.heart;
-
-    }
-
-    &::after {
-        @include mixins.heart;
-        @include mixins.gradient;
-        color: transparent;
-        font-weight: 900;
-        opacity: 0;
-    }
-
-    &:hover::after {
-        transition: 250ms;
-        opacity: 1;
-    }
 
     & h2,
     p {
@@ -102,6 +85,27 @@
 
 
 
+}
+
+.heart {
+    &::before {
+        @include mixins.heart;
+        right: 25px;
+        top: 49px;
+    }
+
+    &::after {
+        @include mixins.heart;
+        @include mixins.gradient;
+        color: transparent;
+        font-weight: 900;
+        opacity: 0;
+    }
+
+    &:hover::after {
+        transition: 250ms;
+        opacity: 1;
+    }
 }
 
 @media (min-width: 768px) {

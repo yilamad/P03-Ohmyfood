@@ -48,10 +48,16 @@ img {
         font-weight: 400;
     }
 
+
+
+
+
+}
+
+.heart {
     &::before {
         @include mixins.heart;
-        right: 25px;
-        top: 49px;
+
     }
 
     &::after {
@@ -60,17 +66,13 @@ img {
         color: transparent;
         font-weight: 900;
         opacity: 0;
-        right: 25px;
-        top: 49px;
+
     }
 
     &:hover::after {
         transition: 250ms;
         opacity: 1;
     }
-
-
-
 }
 
 /*MENU-LIST*/
@@ -140,7 +142,7 @@ img {
     align-items: end;
     font-weight: 900;
     margin-left: auto;
-    margin-bottom: 10px;
+    margin-bottom: 19px;
     width: 50px;
 
 }
@@ -157,9 +159,9 @@ img {
     background-color: colors.$blue;
     display: flex;
     align-items: center;
-    width: 50px;
+    width: 80px;
     border-radius: 0 25px 25px 0;
-    margin-right: -51px;
+    margin-right: -80px;
     transition: all 250ms ease-in-out;
 
     & i {
@@ -205,6 +207,33 @@ img {
 }
 
 
+
+
 footer {
     padding: 11px;
+}
+
+
+@media (min-width: 768px) {
+    .menu-responsive {
+        display: flex;
+    }
+
+    .menu-list {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow: auto;
+    }
+
+    .menu-text {
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 994px) {
+    .menu-text {
+        width: 100%;
+    }
 }
